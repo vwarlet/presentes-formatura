@@ -1,0 +1,318 @@
+/* Estilos gerais */
+body {
+    font-family: "Cocomat Pro", sans-serif;
+    background-color: #16321C; /*#f7f7f7;*/
+    text-align: center;
+    /* background-image: url('images/black-graduation.jpg');
+    background-repeat: repeat-y;
+    background-position: center top;
+    background-attachment: fixed;
+    background-size: cover; */
+    color: #C39F60;
+}
+
+.content {
+    margin: 0 200px;
+}
+
+h1, h2 {
+    font-family: "Aston Script", sans-serif;
+    /* font-family: "Cocomat Pro", sans-serif; */
+    color: #C39F60;
+    font-size: 48px;
+    padding: 20px;
+    text-align: center;
+    /* background-color: #ffe4ed; */
+    border-radius: 10px;
+}
+
+/* Estilos da lista de produtos */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+#list {
+    /* background-color: #eee; */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    width: calc(30% - 10px);
+    margin: 10px auto;
+    font-size: 20px;
+}
+
+.item-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#compras-list {
+    /* background-color: #eee; */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    width: calc(20% - 10px);
+    margin: 10px auto;
+    font-size: 16px;
+}
+
+/* Estilos das imagens */
+.imagem {
+    max-width: 100%;
+    height: auto;
+    border: 3px solid #C39F60; /* Adiciona uma borda rosa ao redor das imagens */
+    max-height: 200px; /* Altura máxima para todas as imagens */
+}
+
+/* Estilos da página de pagamento */
+form {
+    /* background-color: #fff; */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 30%;
+    margin: 20px auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #C39F60;
+    border-radius: 10px;
+}
+
+button {
+    background-color: #C39F60;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* Estilos para links */
+a {
+    /* color: #FF4081; */
+    color: white;
+    text-decoration: none;
+    font-weight: bold; /* Links mais destacados */
+}
+
+
+button:hover{
+    background-color: #a77521;
+    transition: 0.5s;
+}
+
+/* Botão de voltar */
+.botao-voltar {
+    background-color: #C39F60;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* Estilos do pop-up */
+.ontop {
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+    position: fixed; /* Posicionamento fixo para o pop-up */
+    background-color: rgba(20, 20, 20, 0.8);
+    color: #aaaaaa;
+}
+
+#popup {
+    width: 400px;
+    height: 100px;
+    position: fixed; /* Posicionamento fixo para o pop-up */
+    color: #C39F60;
+    background-color: #16321C;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza o pop-up vertical e horizontalmente */
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+
+/* Defina o tamanho original do item da lista */
+.zoomable {
+    transition: transform 0.3s;
+}
+
+/* Aplique o zoom quando o mouse passa sobre o item */
+.zoomable:hover {
+    transform: scale(1.05); /* Aumenta a escala em 10% */
+}
+
+
+/* static/style.css */
+
+header {
+    border-bottom: 1px solid #C39F60;
+    padding-bottom: 10px;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline; /* Os itens da navegação ficam na mesma linha */
+    margin-right: 10px; /* Espaçamento entre os itens da navegação */
+}
+
+nav ul li a {
+    text-decoration: none; /* Remover sublinhado dos links */
+    color: #C39F60; /* Cor do texto dos links na barra de navegação */
+}
+
+nav ul li a:hover {
+    transition: 0.5s;
+    color: #ddd;
+    background-color: #16321C;
+}
+
+footer {
+    border-top: 1px solid #C39F60;
+    font-size: 12px;
+    justify-content: space-between;
+    display: flex;
+}
+
+footer a {
+    color: #C39F60;
+}
+
+
+#editar {
+    background-color: green;
+    margin-left: 20px;
+}
+
+#editar:hover{
+    background-color: rgb(172, 172, 17);
+}
+
+#excluir {
+    font-weight:bold;
+    background-color: green;
+}
+
+#excluir:hover{
+    background-color: red;
+}
+
+#form-excluir {
+    box-shadow: none;
+    display: inline;
+}
+
+.form-input {
+    width: 400px;
+}
+
+.lista-presenca {
+    text-align: left;
+    margin-left: 30%;
+    font-size: 20px;
+}
+
+td {
+    display: block;
+    border: 0px;
+}
+
+table {
+    padding: 10px;
+}
+
+.form-textarea {
+    border-radius: 10px;
+    resize: none;
+    padding: 10px;
+    width: 90%;
+    font-size: 14px;
+    text-align: left;
+    line-height: 1; /* Alinhar o texto no topo do textarea */
+}
+
+.form-input {
+    border-radius: 10px;
+    padding: 10px;
+    width: 80%;
+}
+
+
+.excluir {
+    background-color: #16321C;
+}
+
+.excluir:hover {
+    background-color: red;
+}
+
+#adicionar-pessoa:hover {
+    color: #C39F60;
+    transition: 0.5s;
+}
+
+#login {
+    align-items: right;
+}
+
+.nav-lista {
+    display: flex;
+    justify-content: center; /* Centraliza as listas horizontalmente */
+    align-items: center; /* Centraliza as listas verticalmente */
+}
+
+.lista-centralizada, .lista-direita {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-centralizada {
+    flex: 1;
+    text-align: center;
+}
+
+.lista-direita {
+    text-align: right;
+}
+
+.gg-profile {
+    margin-left: 10%;
+}
+
+#qrcode {
+    margin-top: 10px;
+    width: 50%;
+    border: 3px solid #C39F60;
+}

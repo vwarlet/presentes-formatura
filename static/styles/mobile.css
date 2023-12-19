@@ -1,0 +1,68 @@
+/* Estilos específicos para dispositivos móveis (celulares) */
+body {
+    font-family: "Cocomat Pro", sans-serif;
+    background-color: #16321C;
+    color: #C39F60;
+    padding: 10px;
+}
+
+.content {
+    margin: 0;
+}
+
+h1, h2 {
+    font-family: "Aston Script", sans-serif;
+    font-size: 32px;
+    padding: 10px;
+}
+
+#list, #compras-list {
+    width: 100%;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.imagem {
+    max-width: 100%;
+    height: auto;
+    border: 3px solid #C39F60;
+    max-height: auto;
+}
+
+form {
+    padding: 10px;
+    width: 90%;
+}
+
+label {
+    font-size: 16px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #C39F60;
+    border-radius: 10px;
+}
+
+/*
+.nav-lista ul {
+    display: none;
+}
+#menu-icon::before {
+    content: '\2630'; // Ícone de três linhas (hamburguer) 
+    font-size: 24px;
+    cursor: pointer;
+}
+.nav-lista.active ul {
+    display: block;
+} 
+*/
+
+.lista-centralizada a{
+    display: flex; /* Exibe os itens lado a lado */
+    flex-wrap: wrap;
+    font-size: 24px;
+    margin-bottom: -30px;
+    margin-left: 30px;
+}

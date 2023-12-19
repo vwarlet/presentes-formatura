@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h2>Você está comprando</h2>
+    <form method="post" action="{{ url_for('compra_bp.compra', item_id=item.id) }}" id="action-form">
+        {{ form.hidden_tag() }}
+        <img src="{{ url_for('item_bp.imagem_item', item_id=item.id) }}" alt="{{ item.nome }}" class="imagem"/>
+        <p>{{ item.nome }}</p>
+        <p>Preço: R$ {{ item.valor }}</p>
+        <ul><br>
+            <li>
+                <p>Digite seu nome</p>
+                {{ form.nome(class="form-input") }}
+            </li><br>
+            <li>
+                <p>Deixe uma mensagem</p>
+                {{ form.mensagem(class="form-textarea", rows="10") }}
+            </li>
+        </ul>
+        <input type="hidden" name="item" value="{{ item.nome }}"> <!-- pegar o item comprado -->
+        <span id="item-valor" data-item-valor="{{ item.valor }}"></span> <!-- pegar o valor pra gerar QRCode -->
+        <label for="action-select">Forma de pagamento:</label>
+        <select id="action-select">
+            <option value="pix">Pix</option>
+            <option value="card">Cartão de Crédito</option>
+            <option value="doc">Transferência Bancária</option>
+        </select><br>
+        <button type="submit" id="comprarBtn">Pagar</button>
+    </form>
+
+    <!-- Abre uma janela para pagamento ao clicar em Comprar -->
+    <div id="popDiv" class="ontop" style="display: none;">
+        <table id="popup">
+            <tr>
+                <td id="popup-message"></td>
+                <td><span id="codigoPix" style="display: none;"></span></td>
+                <td onClick="hide('popDiv')">Clique aqui para fechar</td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}
+
+{% block head %}
+    <title>Compra de Presente</title>
+{% endblock %}

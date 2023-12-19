@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>Lista de Presentes</h1>
+    <ul class="item-list">
+        {% for item in itens %}
+            <li class="zoomable" id="list">
+                <img src="{{ url_for('item_bp.imagem_item', item_id=item.id) }}" alt="{{ item.nome }}" class="imagem"/>
+                <p>{{ item.nome }}</p>
+                <p>{{ item.valor }}</p>
+                <button>
+                    <a href="{{ url_for('compra_bp.compra', item_id=item.id) }}">Comprar</a>
+                </button>
+                <br>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block head %}
+    <title>Lista de Presentes</title>
+{% endblock %}

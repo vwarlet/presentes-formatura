@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}{% endblock %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/mobile.css') }}" media="screen and (max-width: 767px)">
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/trash.css' rel='stylesheet'>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/profile.css' rel='stylesheet'>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/instagram.css' rel='stylesheet'>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/chevron-right.css' rel='stylesheet'>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/chevron-left.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    {% if current_user.is_authenticated %}
+    <!-- Cabeçalho para usuários logados -->
+    <header>
+        <nav class="nav-lista">
+            <ul class="lista-centralizada">
+                <li><a href="/">Home</a></li>
+                <li><a href="/listar">Lista de Presentes</a></li>
+                <li><a href="/confirmar">Confirmar Presença</a></li>
+                <li><a href="/presenca">Lista de Confirmados</a></li>
+                <li><a href="/compras">Compras dos Convidados</a></li>
+                <li><a href="/itens">Ajustar Lista de Presentes</a></li>
+            </ul>
+            <ul class="lista-direita">
+                <li><a href="/login" class="ultimo"><i class="gg-profile"></i>{{ session['username'] }}</a></li>
+                <li><a href="/logout" class="ultimo" style="font-size: 14px;">SAIR</a></li>
+            </ul>
+        </nav>
+    </header>
+    {% else %}
+    <!-- Cabeçalho para todos os usuários (não autenticados) -->
+    <header>
+        <nav class="nav-lista">
+            <ul class="lista-centralizada">
+                <li><a href="/">Home</a></li>
+                <li><a href="/listar">Lista de Presentes</a></li>
+                <li><a href="/confirmar">Confirmar Presença</a></li>
+            </ul>
+        </nav>
+    </header>
+    {% endif %}
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <br>
+    <footer>
+        <p><a href="https://www.instagram.com/"><i class="gg-instagram"></i></a></p>
+        <p>Sistema de Lista de Presentes e Presença para formatura</p>
+        <p><a href="/login" class="ultimo"><i class="gg-profile"></i></a></p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

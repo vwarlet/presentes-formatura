@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>Confirmar Presença</h1>
+    <p> Confirme sua presença, dos seus amigos e familiares!</p>
+    <form method="post" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <ul id="pessoas-list">
+            <li>
+                {{ form.nome.label }}
+                {{ form.nome(class="form-input", value="") }}
+                <button style="display: none;" type="hidden" class="excluir"><i class="gg-trash"></i></button>
+            </li>
+        </ul>
+        <a href="#" id="adicionar-pessoa">Adicionar Pessoa</a><br><br>
+        <button id="confirmar" type="submit">Confirmar</button>
+    </form>
+    
+    <!-- Modelo oculto para clonar -->
+    <li id="modelo" style="display: none;">
+        {{ form.nome.label }}
+        {{ form.nome(class="form-input", value="") }}
+        <button type="button" class="excluir"><i class="gg-trash"></i></button>
+    </li>
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const adicionarPessoaLink = document.getElementById("adicionar-pessoa");
+            const modelo = document.getElementById("modelo");
+
+            adicionarPessoaLink.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                // Clone o modelo oculto e adicione-o à lista de pessoas
+                const clone = modelo.cloneNode(true);
+                clone.style.display = "list-item"; // Exibir o elemento clonado
+                clone.querySelector(".excluir").addEventListener("click", function () {
+                    clone.remove();
+                });
+                document.getElementById("pessoas-list").appendChild(clone);
+            });
+        });
+        // Mensagem de Confirmados!
+        document.getElementById('confirmar').addEventListener('click', function() {
+            // Verificar se todos os campos input estão preenchidos
+            const inputs = document.querySelectorAll('input');
+            let todosPreenchidos = true;
+            // O último está acusando sempre vazio, então pulo ele
+            for (var i = 0; i < inputs.length - 1; i++) {
+                if (inputs[i].value.trim() === '') {
+                    todosPreenchidos = false;
+                    break;
+                }
+            }
+            if (todosPreenchidos) {
+                alert("Obrigado por confirmar sua presença! Te vejo lá!");
+            } else {
+                alert("Por favor, preencha todos os campos antes de confirmar.");
+            }
+        });
+    </script>
+{% endblock %}
+
+{% block head %}
+    <title>Confirmar Presença</title>
+{% endblock %}

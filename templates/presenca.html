@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>Lista de Presenças Confirmadas</h1>
+    <ul class="lista-presenca">
+        {% for presenca in presencas %}
+            <li>{{ presenca.id }} - {{ presenca.nome }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block head %}
+    <title>Presenças Confirmadas</title>
+{% endblock %}

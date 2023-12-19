@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>Editar Item</h1>
+    <form method="post" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <ul>
+            <li>
+                {{ form.nome.label }}
+                {{ form.nome(class="form-input") }}
+            </li>
+            <li>
+                {{ form.valor.label }}
+                {{ form.valor(class="form-input") }}
+            </li>
+            <li>
+                {{ form.imagem.label }}
+                {{ form.imagem() }}
+            </li>
+        </ul>
+        <button type="submit">Salvar</button>
+    </form>
+{% endblock %}
+
+{% block head %}
+    <title>Admin - Editar Item</title>
+{% endblock %}
